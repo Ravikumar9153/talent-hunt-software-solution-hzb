@@ -1,0 +1,34 @@
+/* course detail css */
+.course {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.course-item {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(50% - 40px);
+}
+
+.course-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  object-fit: fill;
+}
+
+.course-item h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.course-item p {
+  font-size: 18px;
+  color: #666;
+}
+

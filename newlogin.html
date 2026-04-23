@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="Login.css"> -->
+    <style>
+ * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .main-container {
+            width: 1000px;
+            height: 600px;
+            background-color: #1a1a2e;
+            border-radius: 24px;
+            display: flex;
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+            position: relative;
+        }
+  /* --- LEFT SIDE (LOGIN) --- */
+        .login-side {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            background: #16162a;
+            z-index: 2;
+        }
+
+        .logo { color: white; font-weight: 800; font-size: 1.2rem; letter-spacing: 1px; }
+
+        .login-form-container { margin: auto; width: 85%; text-align: center; }
+
+        .user-icon {
+            width: 70px; height: 70px; border: 2px solid #00d2ff;
+            border-radius: 50%; margin: 0 auto 30px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .user-icon img { width: 35px; filter: invert(1); }
+
+        .input-group input {
+            width: 100%; padding: 14px; margin-bottom: 15px;
+            background: rgba(255,255,255,0.05); border: 1px solid #333;
+            border-radius: 30px; color: white; text-align: center; outline: none;
+        }
+
+        .login-btn {
+            width: 100%; padding: 14px; background: #ff007f;
+            border: none; border-radius: 30px; color: white;
+            font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        .login-btn:hover { background: #e60072; transform: translateY(-2px); }
+
+        .form-footer {
+            display: flex; justify-content: space-between;
+            font-size: 0.75rem; color: #888; margin-top: 15px;
+        }
+        .form-footer a { color: #888; text-decoration: none; }
+
+        /* --- RIGHT SIDE (WELCOME) --- */
+        .welcome-side {
+            flex: 1.6;
+            background: radial-gradient(circle at 20% 50%, #4a00e0, #1a1a2e 70%);
+            padding: 40px; position: relative; color: white;
+            display: flex; flex-direction: column;
+        }
+
+        /* Navigation & Hamburger */
+        .nav-container { display: flex; justify-content: flex-end; align-items: center; gap: 20px; }
+        
+        .nav-menu { display: flex; list-style: none; gap: 20px; }
+        .nav-menu a { color: #ccc; text-decoration: none; font-size: 0.75rem; font-weight: 600; }
+        
+        .signin-nav {
+            background: #00d2ff; border: none; padding: 8px 20px;
+            border-radius: 20px; color: white; font-weight: bold; cursor: pointer;
+        }
+
+        .menu-checkbox { display: none; }
+        .hamburger { display: none; cursor: pointer; z-index: 100; flex-direction: column; gap: 5px; }
+        .hamburger span { width: 25px; height: 3px; background: white; transition: 0.3s; }
+
+        .welcome-content { margin: auto 0; padding-left: 40px; }
+        .welcome-content h1 { font-size: 5rem; line-height: 1; margin-bottom: 20px; }
+        .welcome-content p { color: #aaa; max-width: 350px; line-height: 1.6; margin-bottom: 30px; }
+
+        .signup-prompt { font-size: 0.85rem; color: #888; margin-top: auto; text-align: right; }
+        .signup-prompt a { color: white; text-decoration: none; font-weight: bold; }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 850px) {
+            .main-container { flex-direction: column; height: auto; width: 100%; max-width: 450px; }
+            .login-side { order: 2; border-radius: 0 0 24px 24px; }
+            .welcome-side { order: 1; min-height: 400px; border-radius: 24px 24px 0 0; }
+            
+            .hamburger { display: flex; }
+            
+            .nav-menu {
+                position: absolute; top: 0; right: -100%; width: 100%; height: 100%;
+                background: rgba(26, 26, 46, 0.98); backdrop-filter: blur(10px);
+                flex-direction: column; align-items: center; justify-content: center;
+                transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0); z-index: 90;
+            }
+
+            .menu-checkbox:checked ~ .nav-menu { right: 0; }
+            .menu-checkbox:checked + .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .menu-checkbox:checked + .hamburger span:nth-child(2) { opacity: 0; }
+            .menu-checkbox:checked + .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+            .welcome-content { padding-left: 0; text-align: center; }
+            .welcome-content h1 { font-size: 3.5rem; }
+            .welcome-content p { margin: 0 auto; }
+            .signup-prompt { text-align: center; padding-top: 20px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sign in section -->
+    <div class="main-container">
+        <div class="login-side">
+            <div class="logo">TALENT HUNT SOFTWARE SOLUTION</div>
+            <div class="login-form-container">
+                <div class="user-icon">
+                    <img src="https://img.icons8.com/ios-glyphs/90/user--v1.png" alt="user">
+                </div>
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="USERNAME" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="login-btn">LOGIN</button>
+                    <div class="form-footer">
+                        <label><input type="checkbox"> Remember me</label>
+                        <a href="#">Forgot your password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="welcome-side">
+            <nav class="nav-container">
+                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+                <label for="menu-toggle" class="hamburger">
+                    <span></span><span></span><span></span>
+                </label>
+
+                <ul class="nav-menu">
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="project.html">PROJECT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+                <button class="signin-nav">SIGN IN</button>
+            </nav>
+
+            <div class="welcome-content">
+                <h1>Welcome.</h1>
+                <p>Access your dashboard and manage your projects with our seamless, integrated interface.</p>
+            </div>
+
+            <div class="signup-prompt">
+                Not a member? <a href="signup.html">Sign up now</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

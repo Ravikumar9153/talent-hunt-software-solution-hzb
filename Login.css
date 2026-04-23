@@ -1,0 +1,171 @@
+/* Navbar */
+nav {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  background-color: #120a8f;
+  color: #efebeb;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+}
+
+.part1 {
+  font-weight: bold;
+  font-size: 1.2em;
+  height: 60px;
+  width: 60px;
+  display: flex;
+}
+
+.part2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.part2 a {
+  color: #d8cfcf;
+  text-decoration: none;
+  margin-right: 40px;
+}
+
+.part2 a:hover {
+  color: #ccc;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 5px;
+  margin-right: 20px;
+}
+/* Login section */
+.form{
+  margin-top: 100px;
+}
+
+
+.login-section{
+  height: 250px;
+  width: 100vw;
+  margin-top: 200px;
+  margin-bottom: 80px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.login-part{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height:350px;
+    background-color: #d9bbbb;
+  border: 3px solid rgb(216, 201, 201);
+  border-radius: 50px;
+}
+.login-part h2{
+  display: flex;
+  justify-content: center;
+}
+.login1{
+  align-items: center;
+}
+
+
+/* Footer */
+.footer{
+  height: 250px;
+  width: 100%;
+  background-color:#20263e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+iframe{
+  border: 2px solid black;
+  height: 150px;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+.footer a{
+  color: white;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.foot-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin-right: 40px;
+ 
+}
+
+.copyright{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #20263e;
+  color: white;
+   font-weight: bold;
+}
+@media (max-width: 600px) {
+  .part2 {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #121b18;
+    padding: 10px;
+  }
+  .part2.show {
+    display: flex;
+  }
+  .part2 a {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .hamburger {
+    display: block;
+  }
+
+.footer{
+  height: 400px;
+  width: 100%;
+  background-color: #121b18;
+ display: flex;
+ flex-direction: column;
+}
+iframe{
+  margin: 10px;
+}
+.copyright{
+  top: 0;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+}
+@media (max-width: 400px) {
+ .copyright{
+  height: 80px;
+  background-color: rgb(155, 13, 13);
+ }
+}
+

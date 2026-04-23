@@ -1,0 +1,110 @@
+ :root {
+   --bg-dark: #111111;
+   --bg-light: #ffffff;
+   --accent-blue: #00a8ff;
+   --accent-soft: #48dbfb;
+   --text-white: #ffffff;
+   --text-dark: #333333;
+   --split-angle: 145deg;
+ }
+
+ .mission-section {
+  margin-top: 90px;
+   width: 100%;
+   background-color: #333;
+   color: #fff;
+   padding: 40px 0;
+   margin-bottom: 20px;
+ }
+
+ .mission-overlay {
+   width: 90%;
+   margin: 0 auto;
+   text-align: center;
+ }
+ .mission-overlay h1{
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+ }
+ .mission-overlay p{
+  font-size: 16px;
+  line-height: 1.6;
+ }
+
+ /* course detail css */
+ .course {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+ }
+
+ .course-item {
+   margin: 20px;
+   padding: 20px;
+   border: 1px solid #ddd;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   width: calc(50% - 40px);
+ }
+
+ .course-item img {
+   width: 100%;
+   height: 150px;
+   object-fit: cover;
+   border-radius: 10px 10px 0 0;
+ }
+
+ .course-item h3 {
+   font-size: 24px;
+   margin-bottom: 10px;
+ }
+
+ .course-item p {
+   font-size: 18px;
+   color: #666;
+ }
+
+ /* Placement page css */
+ .placement-head {
+   text-align: center;
+ }
+
+ .placement-1st {
+   margin-bottom: 20px;
+ }
+
+ .placement-image {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+ }
+
+ .image {
+   margin: 20px;
+   width: calc(33.33% - 40px);
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   padding: 20px;
+   border-radius: 10px;
+   text-align: center;
+   background-color: aqua;
+ }
+
+ .image img {
+   width: 100px;
+   height: 100px;
+   object-fit: cover;
+   border-radius: 50%;
+ }
+
+ .image h5 {
+   margin-top: 10px;
+ }
+
+
+ /* AT screen width 768px */
+ @media (max-width: 768px) {
+   .image {
+     width: calc(50% - 40px);
+   }
+ }

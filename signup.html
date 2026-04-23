@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Webpage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #20263e 0%, #2c3e50 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .reg-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-header {
+            background: #20263e;
+            color: #f3eb0a;
+            padding: 20px;
+            text-align: center;
+        }
+
+        form {
+            padding: 30px;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #20263e;
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #20263e;
+            box-shadow: 0 0 5px rgba(32, 38, 62, 0.2);
+        }
+
+        /* Specific styling for radios and checkboxes */
+        .options-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 10px 0;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .button-group {
+            grid-column: span 2;
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit {
+            background: #20263e;
+            color: #fff;
+        }
+
+        .btn-submit:hover {
+            background: #f3eb0a;
+            color: #20263e;
+        }
+
+        .btn-reset {
+            background: #f44336;
+            color: #fff;
+        }
+
+        /* Styling for the copy address checkbox area */
+        .form-group.full-width label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* Password match validation styling */
+        input.invalid {
+            border-color: #f44336;
+            background-color: #fff8f8;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .input-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: span 1;
+            }
+
+            .button-group {
+                grid-column: span 1;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reg-container">
+        <div class="form-header">
+            <h1>Student Registration</h1>
+            <p id="datetime"></p>
+        </div>
+    <!-- </div> -->
+
+    <form action="#" method="post" id="regForm">
+        <div class="input-grid">
+            <div class="form-group full-width">
+                <label>Name</label>
+                <textarea id="name" name="name" required></textarea>
+            </div>
+            <div class="form-group full-width">
+                <label>Father's Name</label>
+                <textarea id="name" name="name" required></textarea>
+            </div>
+            <div class="form-group full-width">
+                <label>Mother's Name</label>
+                <textarea id="name" name="name" required></textarea>
+            </div>
+            <div class="form-group full-width">
+                <label>Gender</label>
+                <select name="gender" id="">
+                    <option>---SELECT---</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group full-width">
+                <label>DOB</label>
+                <input type="date">
+            </div>
+            <div class="form-group full-width">
+                <label>MOB NO</label>
+                <input type="mob-number" required>
+            </div>
+            <div class="form-group full-width">
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group full-width">
+                <label>Higher-Education</label>
+                <select name="Education" id="">
+                    <option>---SELECT---</option>
+                    <option value="CSE">CSE</option>  <option value="ECE">ECE</option>  <option value="EEE">EEE</option>   <option value="MECH">MECH</option> <option value="BCA">BCA</option>
+                    <option value="BBA">BBA</option>  <option value="Bio-Tech">Bio-Tech</option> <option value="BA">BA</option> <option value="MBA">MBA</option> <option value="MCA">MCA</option>
+                    <option value="MA">MA</option>   <option value="Diploma">Diploma</option>  <option value="ITI">ITI</option><option value="others">Others</option>
+                </select>
+            </div>
+            <div class="form-group full-width">
+                <label>Present Address</label>
+                <textarea id="present_addrs" name="addrs" rows="2" required></textarea>
+            </div>
+
+            <div class="form-group full-width" style="flex-direction: row; align-items: center; gap: 10px;">
+                <input type="checkbox" id="copy_address" onclick="copyAddress()">
+                <label for="copy_address" style="margin-bottom: 0; cursor: pointer;">Same as Present Address</label>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Permanent Address</label>
+                <textarea id="permanent_addrs" name="p_addrs" rows="2" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="pass" name="pass" placeholder="Create a strong password" required>
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" id="confirm_pass" placeholder="Repeat your password" required>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-submit">Submit Registration</button>
+                <button type="reset" class="btn btn-reset">Reset Form</button>
+            </div>
+        </div>
+    </form>
+    </div>
+
+    <script>
+        let currentDate = new Date();
+        document.getElementById("datetime").innerHTML = currentDate.toDateString();
+        // Function to copy Present Address to Permanent Address
+        function copyAddress() {
+            const present = document.getElementById('present_addrs');
+            const permanent = document.getElementById('permanent_addrs');
+            const checkbox = document.getElementById('copy_address');
+
+            if (checkbox.checked) {
+                permanent.value = present.value;
+            } else {
+                permanent.value = "";
+            }
+        }
+
+        // Password Validation Logic
+        const form = document.getElementById('regForm');
+        const pass = document.getElementById('pass');
+        const confirmPass = document.getElementById('confirm_pass');
+
+        form.addEventListener('submit', function (event) {
+            if (pass.value !== confirmPass.value) {
+                event.preventDefault(); // Stop form from submitting
+                alert("Passwords do not match!");
+                confirmPass.classList.add('invalid');
+            } else {
+                confirmPass.classList.remove('invalid');
+                alert("Registration Successful!");
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="common-style.css">
+  <style>
+    body {
+      background-color: #fff;
+      /* background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); */
+    }
+
+    .content a {
+      text-decoration: none;
+      color: white;
+    }
+
+    #table {
+      margin-top: 80px;
+      display: flex;
+      justify-content: center;
+      height: auto;
+
+    }
+
+    #table table tr td,
+    #table table tr th,
+    #table table tr td a {
+      border: 2px solid black;
+      height: 8px;
+      padding: 5px;
+      color: rgb(243, 247, 3);
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size:25px;
+    }
+
+    #table table tr td a {
+      text-decoration: none;
+      color: #89ed07;
+    }
+
+
+    /* Page wrapper to centralize all content */
+    .page-container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 20px auto;
+      /* 20px space top/bottom, auto center */
+      margin-top: 90px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      /* Subtle shadow around the content like in the image */
+      background-color: #fff;
+      padding: 0;
+    }
+
+    /* --- 4. Page Content Styling --- */
+    .page-heading {
+      text-align: center;
+      color: #002244;
+      font-size: 28px;
+      margin: 30px 0 20px;
+    }
+
+    /* --- 5. Table Styling --- */
+    .portfolio-table {
+      width: 95%;
+      margin: 0 auto 30px;
+      /* Centered, with space below */
+      border-collapse: collapse;
+      /* Essential for cell borders */
+      background-color: #2b3a4c;
+      /* Dark table background */
+      color: #fff;
+      font-size: 15px;
+      border: 1px solid #1c2a3b;
+    }
+
+    .portfolio-table th,
+    .portfolio-table td {
+      padding: 8px;
+      /* Less padding, matching image density */
+      text-align: center;
+      border: 1px solid #1c2a3b;
+      /* Darker cell borders */
+    }
+
+    /* Thicker border below header */
+    .portfolio-table thead {
+      border-bottom: 2px solid #1c2a3b;
+    }
+
+    .portfolio-table th {
+      font-weight: bold;
+      font-size: 14px;
+      color: #82939c;
+      /* Light grey-blue color */
+    }
+
+    /* Column alignment overrides */
+    .portfolio-table th:nth-child(2),
+    .portfolio-table td:nth-child(2),
+    .portfolio-table th:nth-child(3),
+    .portfolio-table td:nth-child(3) {
+      text-align: left;
+      /* Left align names and project titles */
+    }
+
+    /* Specific styling for the 'ONGOING' status (Row 4) */
+    .status-ongoing {
+      color: #f1c40f;
+      /* Yellow text color */
+      font-weight: bold;
+    }
+
+    /* Button for the 'CLICK HERE' links */
+    .btn-click {
+      text-decoration: none;
+      color: #82939c;
+      /* Match header color */
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-click:hover {
+      color: #f1c40f;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="part1">
+      <img src="thss.jpg" alt="THSS LOGO">
+      <p>THSS</p>
+    </div>
+    <div class="part2">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="course.html">Course</a></li>
+        <li><a href="Syllabus.html">Syllabus</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="newlogin.html" class="login-nav">Login</a></li>
+      </ul>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <br>
+  <div class="page-container">
+
+
+    <h1 class="page-heading">PROJECT PORTFOLIO DATA</h1>
+
+    <table class="portfolio-table">
+      <thead>
+        <tr>
+          <th>SNO</th>
+          <th>STUDENT NAME</th>
+          <th>PROJECT NAME</th>
+          <th>STARTING DATE</th>
+          <th>ENDING DATE</th>
+          <th>LINK</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td>1.</td>
+          <td>Ravi Kumar</td>
+          <td>Paytm</td>
+          <td>10/12/2023</td>
+          <td>20/12/2023</td>
+          <td><a href="https://github.com/Ravikumar9153/Mini_Project_Paytm1/blob/main/REPAYTM.CPP"
+              class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>2.</td>
+          <td>Shubham Kumar Ray</td>
+          <td>BCA Notes webpage</td>
+          <td>01/11/2025</td>
+          <td>10/12/2025</td>
+          <td><a href="https://subhamtargetbca.netlify.app/" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>3.</td>
+          <td>Rahul Kumar</td>
+          <td>Homeopathy webpage</td>
+          <td>01/12/2025</td>
+          <td>15/12/2025</td>
+          <td><a href="#" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>4.</td>
+          <td>Ravi Kumar</td>
+          <td>THSS webpage</td>
+          <td>20/12/2025</td>
+          <td class="status-ongoing">Ongoing</td>
+          <td><a href="http://127.0.0.1:3000/ABC/coaching/project.html" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>5.</td>
+          <td>Ravi Kumar</td>
+          <td>Rapido webpage</td>
+          <td>15/12/2025</td>
+          <td>18/12/2025</td>
+          <td><a href="https://rapido-clone-by-ravi.netlify.app/" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>6.</td>
+          <td>Ravi Kumar</td>
+          <td>Age Calculator</td>
+          <td>01/01/2024</td>
+          <td>01/02/2024</td>
+          <td><a href="https://github.com/Ravikumar9153/Age_Calculator" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>7.</td>
+          <td>Ravi Kumar</td>
+          <td>Tic-Tac-Toe Game using c++</td>
+          <td>10/10/2024</td>
+          <td>15/10/2024</td>
+          <td><a href="https://github.com/Ravikumar9153/TIC-TAC-TOE-GAME" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>8.</td>
+          <td>Shubham Kumar Ray</td>
+          <td>Paytm</td>
+          <td>10/01/2024</td>
+          <td>15/01/2024</td>
+          <td><a href="#" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>9.</td>
+          <td>Shubham Kumar Ray</td>
+          <td>Hospital Management</td>
+          <td>20/01/2024</td>
+          <td>25/01/2024</td>
+          <td><a href="#" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>10.</td>
+          <td>Shubham Kumar Ray</td>
+          <td>School Management</td>
+          <td>01/02/2024</td>
+          <td>04/02/2024</td>
+          <td><a href="#" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>11.</td>
+          <td>Shubham Kumar Ray</td>
+          <td>Tic-Tac-Toe Game</td>
+          <td>10/10/2024</td>
+          <td>25/10/2024</td>
+          <td><a href="#" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>12.</td>
+          <td>Shubham Kumar Ray</td>
+          <td>Atm</td>
+          <td>01/01/2024</td>
+          <td>01/02/2024</td>
+          <td><a href="#" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>13.</td>
+          <td>Shubham Kumar Ray</td>
+          <td>AGE Calculator</td>
+          <td>01/01/2024</td>
+          <td>01/02/2024</td>
+          <td><a href="#" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>14.</td>
+          <td>Ravi Kumar</td>
+          <td>Library Clone</td>
+          <td>10/12/2025</td>
+          <td>12/12/2025</td>
+          <td><a href="#" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>15.</td>
+          <td>Ravi Kumar</td>
+          <td>Registration Form</td>
+          <td>05/12/2025</td>
+          <td>07/12/2025</td>
+          <td><a href="#" class="btn-click">Click Here</a></td>
+        </tr>
+        <tr>
+          <td>16.</td>
+          <td>Ravi Kumar</td>
+          <td>Amazon Clone</td>
+          <td>10/03/2025</td>
+          <td>15/03/2025</td>
+          <td><a href="#" class="btn-click">Click Here</a></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+  <div class="footer">
+    <!-- <iframe src="" frameborder="0"></iframe> -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d898.6175578035843!2d85.3773471480924!3d23.990104429756293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1764240333056!5m2!1sen!2sin"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="foot-content">
+      <div class="foot1">
+        <ul>
+          <li><a href="https://subhamtargetbca.netlify.app/"><b>Notes</b></a></li>
+          <li><a href="course.html"><b>Courses</b></a></li>
+          <li><a href="#"><b>Careers</b></a></li>
+          <li><a href="project.html"><b>Project</b></a></li>
+          <li><a href="#"><b>Contact us</b></a></li>
+          <li><a href="#"><b>Gallery</b></a></li>
+        </ul>
+      </div>
+      <div class="foot2">
+        <ul>
+          <li><a href="#"><b>Blogs</b></a></li>
+          <li><a href="https://youtube.com/@talenthuntsoftwaresolution9429?si=0ZjwHCL3yp3_a6bj"><b>Youtube</b></a></li>
+          <li><a href="#"><b>Facebook</b></a></li>
+          <li><a href="#"><b>Linkdin</b></a></li>
+          <li><a href="#"><b>News</b></a></li>
+          <li><a href="https://library-clone-by-ravi.netlify.app/"><b>Library</b></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <div class="site">@Talenthuntsoftwaresolution.com, &copy;All right reserved</div>
+    <div class="content">Designed by <a href="https://ravi-kumarbca.netlify.app/">Ravi Kumar</a>. Distributed by Ravi
+      Kumar</div>
+  </div>
+  <script src="login.js"></script>
+</body>
+
+</html>
